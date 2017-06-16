@@ -1,0 +1,50 @@
+var profiles = [
+    {
+        name: 'Preston McNeil',
+        pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg',
+        status: 'Everything is bigger in Texas'
+    },
+    {
+        name: 'Ryan Rasmussen',
+        pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg',
+        status: 'RR Rules'
+    },
+    {
+        name: 'Terri Ruff',
+        pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg',
+        status: 'Wow, I typed out hunter2 and all you saw was ******?!?!??'
+    },
+    {
+        name: 'Lindsey Mayer',
+        pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/nzcode/128.jpg',
+        status: 'OMG MITTENS DID THE CUTEST THING TODAY'
+    }
+];
+
+module.exports = {
+
+  getFriendsProfiles: function(req, res) {
+      var user = req.session.currentUser;
+      var friends = user.friends;
+      var newArray = [];
+
+      // for (var i = 0; i < friends.length; i++){
+      //     if (friends[i] === profiles[i].name) {
+      //         newArray.push(profiles[i]);
+      //         console.log(profiles[i]);
+      //     }
+      // }
+
+      for (var friend of friends) {
+          for (var profile of profiles) {
+              if (profile.name === friend){
+                  newArray.push(profile);
+              }
+          }
+      }
+      return res.status(200).json({
+      currentUser: user,
+          friends: newArray
+      });
+  }
+};

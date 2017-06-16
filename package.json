@@ -1,0 +1,27 @@
+{
+  "name": "user-profiles",
+  "version": "1.0.0",
+  "description": "user-profile",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john22n/user-profiles.git"
+  },
+  "author": "john Noriega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john22n/user-profiles/issues"
+  },
+  "homepage": "https://github.com/john22n/user-profiles#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "gitignore": "^0.6.0",
+    "session": "^0.1.0"
+  }
+}
